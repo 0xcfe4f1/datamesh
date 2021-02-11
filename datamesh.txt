@@ -1,0 +1,207 @@
+Despite increased investment in AI, bad results
+New Advantage Partners annual reports
+$50M+ on AI
+
+
+
+struggle to get data into the hands of data scientists
+struggle to scale resources
+struggle to scale delivery of data to consumers
+struggle to get data-analysis solutions to missions (failure to materialise)
+
+data architecture landscape
+
+operational data plane (data on the inside -- ACML)
+	running the business
+	serving the users
+	-> tech soup: dbs
+
+analytical data plane
+	optimising the business
+	improving ux
+	-> integrated around particular domains, time variant (integrate data from past and present)
+	-> object store, big table, streams
+
+ETL between these is the source of problem!
+	Problem keeping labyrinth of pipelines between planes being an issue
+	Scaling up data operations team to support the pipelines
+
+Analytical Data Architecture: Data Warehouse (1st gen)
+	10-20 years ago
+	single canonical/global model for access to data to support analytics
+
+2010: aggressive ML expansion: Data Lake
+	raw processing without perfectly modelled data
+	extract when necessary into semi-structured, leave to downstream processing for analytics
+	improvement: no bottleneck of specialised team of data operations maintaining brittle pipelines
+	
+
+3rd gen now: multi-modal data architecture
+	"lakeshore marts"
+
+cambrian explosion, lots and lots of tech
+
+challenge assumptions:
+	ua1: "data management solution architrecture is monolithic"
+		simple to understand and start, less moving parts
+		data "pain": doesn't scale. causes lots of friction 	
+ 
+	"ua2:" data must be centralised to be useful".
+		move into one place so we can get access to it.
+		when ytou standardise data, you lose ownership and meaning of data from the source
+		
+	"ua3": scale atrchitrcvture with top-level technical partitioning
+		least resistance path 
+		domain-oriented data modelling domains, or technical tasks or functions (e.g., ingest, streams, vs. processing/cleaning/enrichment, apis for serving, etc.) -- 
+		tech decomposition leads to more friction: value is orthogonal to value
+		-> new use-case for data makes it difficult to realise if architcutre is based on tech
+
+
+	"ua5" atrehciteu dom is orthog to change
+
+	ua6: activity oriented team decomp
+		do ingest, do cleaning, do data science: no inventive to help others upstream !!!!!!! 
+	
+	"the definition of insanitty is doing the same thing over again and expecting different results"
+
+	data mesh: 
+		respond to scale
+		dynamic topology to be more reactive
+
+	principles:
+		data driven domain data ownership
+		data as a product
+
+	----
+
+decouple atrchitctures
+	tech
+	domains
+
+
+eric evans: DDD: 2003
+	
+relationship between domains
+
+both architcture and ownership to align with:
+	where data comes from	
+	where data is used
+
+	maybe business wants to create new product
+
+	master data 		 
+
+	(dr: microservices?) 
+
+transformation (done in microservices: extend to data)
+
+
+
+metaphor of "flowing data"
+	> cleansing pipeline before it becomes useful
+ 
+data can be sourced and used right at the source/start!
+
+one source of truth: world doesn't work like this!
+	one conceptual model isn't relevant any more in the diverse analytical domains
+
+access mirrors how you model your business
+
+data + product thinking: challenges
+	
+	"inspired" data product management (book)
+ 		tech feasible, usable, valuable:
+
+serve data as a product
+	diverse spectrum of data analytists, data scientists, (different modes of access/requs) users
+	native tools for these users, cannot use non-native (warehouse) tools they won't use (e.g., pig, gm pmr)
+
+	new roles: data product owner (long standing owner)
+		measure success of data (not how many, vannity metrics, 
+			asset not a product
+			measure impact: happiness of consumers
+
+	discoverable (non-neg):
+		good design are: discoverablbility, and understanding
+			where do i find data on X, Y, Z
+			not centralised registry!
+
+		each data product should be discoverable!
+
+	self-describing data products (entities, attributes, meaning in data models)
+
+	multiple topologies for the data: provide different modes of access to same data 
+
+
+	trustworthy
+		"trust: a confident relationship with the unknown"
+	 	data scientst: found a dataset, bridging the gap with rel of new data product
+		
+
+		truthful measutrs of data product:
+			interval of change
+			timeliness (not old data)
+			completeness
+			statistsical shape of data
+			optionally (lineage of data), provenance!
+				understanding where it came from, especially if transformed significantly from the source, want to understand 
+				trust: people who generated it are trustworthy, beause they abide by principles as well (take ownership of their product)
+			
+	architecture quantum:
+		all the structuiral components to be able to work
+	
+	distributed ownership
+		
+	
+	platform thinking
+		
+	new set of teams: data infrastructure
+		reducing friction for data product developers
+		
+	multi-plane data platform
+
+	
+	advanced users: advanced provisioning
+
+	mesh-level operation
+
+	
+new world order!
+
+	givernance
+ 
+   
+	decentralised
+	interoperable
+	dynamic topology
+	automate execution of decitions
+
+	placing a system in a strighjacket of constancy can cause fagility to evolve
+
+ 
+	federated model for data product owners, but local and global incentives (interoperable): global incentives: schema management
+
+	very different governance model: federated governance
+
+	who is responsible 
+		what is the method for definition of quality, security, etc. through testing, so we can measure compliance/success
+
+	
+	emergent value: 	
+
+	
+	data mesh if parasign shift in:
+		arch
+		org 
+		tech
+
+	
+
+"lakehouse"
+
+53%: data access is critical
+
+data mesh: pragmatic response to critical problems in scaling 
+
+ 
+
